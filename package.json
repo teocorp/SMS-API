@@ -1,0 +1,32 @@
+{
+  "name": "phimapi",
+  "version": "1.0.0",
+  "description": "phim",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "author": "cancc",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
+  "dependencies": {
+    "aes-js": "^3.1.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.2",
+    "cheerio": "^1.0.0-rc.2",
+    "crypto-js": "^3.1.9-1",
+    "escape-html": "^1.0.3",
+    "express": "^4.15.5",
+    "fast-json-parse": "^1.0.3",
+    "got": "^7.1.0",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.11.13",
+    "morgan": "^1.9.0",
+    "node-openload": "^2.0.1",
+    "query-string": "^5.0.1",
+    "request": "^2.83.0"
+  }
+}
