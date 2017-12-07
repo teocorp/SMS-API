@@ -1,4 +1,5 @@
 FROM node:latest
+MAINTAINER Cu CongCan "cucongcan@gmail.com"
 RUN mkdir /app
 WORKDIR /app
 COPY package.json /app

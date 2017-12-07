@@ -8,6 +8,9 @@ module.exports = function(app) {
   // setup
   app.route('/setup')
     .get(authenController.setup);
+  app.route('/user')
+    .get(authenController.getMe)
+    .post(authenController.register);
   // authen
   app.route('/authenticate')
     .post(authenController.authenticate);
