@@ -63,12 +63,11 @@ exports.authenticate = function(req, res) {
 		if (err) throw err;
 
 		if (!user) {
-			res.json({ success: false, message: 'Authentication failed. User not found.' });
+			res.json({ success: false, message: 'Authentication failed!' });
 		} else if (user) {
-
 			// check if password matches
-			if (user.password != req.body.password) {
-				res.json({ success: false, message: 'Authentication failed. Wrong password.' });
+			if (!bcrypt.compareSync(req.body.password, user.password)) {
+				res.json({ success: false, message: 'Authentication failed!' });
 			} else {
 
 				// if user is found and password is right
@@ -81,7 +80,7 @@ exports.authenticate = function(req, res) {
 				});
 
 				res.json({
-					error: false,
+					success: true,
 					message: 'Enjoy your token!',
 					token: token
 				});
