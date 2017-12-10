@@ -1,7 +1,5 @@
 module.exports = {
-              
-                  'secret': 'clgtabcxzydcm',
-                  'database': 'mongodb://localhost/Tododb'
-              
-              };
-              
+    'secret': 'clgtabcxzydcm',
+    'database': 'mongodb://localhost/Tododb'
+
+};
