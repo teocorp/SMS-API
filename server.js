@@ -1,6 +1,7 @@
 var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var config = require('./config'); // get our config file
 var morgan = require('morgan');
+var cors = require('cors');
 
 var express = require('express'),
   app = express(),
@@ -32,7 +33,7 @@ var apiRoutes = express.Router();
 // route middleware to authenticate and check token
 // ---------------------------------------------------------
 apiRoutes.use(function (req, res, next) {
-
+  
   // check header or url parameters or post parameters for token
   var token = req.body.token || req.params.token || req.headers['x-access-token'];
 
@@ -66,6 +67,11 @@ apiRoutes.use(function (req, res, next) {
 
 });
 
+
+const corsOptions = {
+  origin: '*'
+}
+app.use(cors(corsOptions));
 // apply the routes to our application with the prefix /api
 app.use('/api', apiRoutes);
 var routes = require('./api/routes/routes'); //importing route
